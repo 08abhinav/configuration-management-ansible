@@ -1,0 +1,7 @@
+#############################################
+# This folder contains a terraform.tfstate which is used for internal configuration and caching not for
+# actual infrastructure state file
+**.terraform/
+#########################################
+
+**.terraform.*
