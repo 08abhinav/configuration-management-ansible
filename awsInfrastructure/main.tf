@@ -57,13 +57,13 @@ resource "aws_instance" "managed_node2"{
 }
 
 output "control-node-ip"{
-    value = aws_instance.control_node
+    value = aws_instance.control_node.public_ip
 }
 
 output "managed-node1-ip"{
-    value = aws_instance.managed_node1
+    value = aws_instance.managed_node1.public_ip
 }
 
 output "managed-node2-ip"{
-    value = aws_instance.managed_node2
+    value = aws_instance.managed_node2.public_ip
 }
