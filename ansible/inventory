@@ -1,0 +1,11 @@
+# In this file you have to add your managed-node IP addresses
+
+# using square brackets we separate our different servers like 
+
+# ---- Web Tier Group ----
+[web-server]
+3.80.160.117
+44.200.67.77
+
+# ---- db Tier Group ----
+[database-server]
