@@ -1,0 +1,8 @@
+# Third palybook to copy index.html from control node to managed nodes
+- hosts: all
+  become: yes
+  tasks:
+    - name: copy html file from control node to managed node
+      copy:
+        src: index.html
+        dest: ../../var/www/html/index.html

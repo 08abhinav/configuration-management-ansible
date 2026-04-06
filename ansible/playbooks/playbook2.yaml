@@ -1,0 +1,20 @@
+# Second playbook to check if nginx installed, if yes start it and at last enable it on boot
+- hosts: all
+  become: yes
+  tasks:
+    - name: Check nginx package
+      command: which nginx
+      register: nginx_check
+      ignore_errors: yes
+
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+      when: nginx_check.rc == 0
+
+    - name: Enable nginx on boot
+      service:
+        name: nginx
+        enabled: yes
+      when: nginx_check.rc == 0

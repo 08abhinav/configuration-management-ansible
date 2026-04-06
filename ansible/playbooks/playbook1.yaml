@@ -1,0 +1,17 @@
+# First palybook to install nginx, check its version and display its version
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Check nginx version
+      ansible.builtin.shell:
+        cmd: nginx -v
+      register: nginx_version
+
+    - name: Display nginx version
+      debug:
+        var: nginx_version.stderr
