@@ -1,0 +1,3 @@
+# first ad hoc command to create a file on managed nodes
+
+ansible -m file -a "touch sample.txt" -i inventory all

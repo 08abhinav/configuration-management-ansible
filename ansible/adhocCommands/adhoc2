@@ -1,0 +1,4 @@
+# ad hoc command to copy a file from control node to managed node
+# Note make sure test file is present on control node
+
+ansible -m copy -a "src=test dest=./" -i inventory all
